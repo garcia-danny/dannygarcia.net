@@ -42,9 +42,9 @@ export const SITE: Site = {
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000,
   showArchives: false,
-  showBackButton: false,
+  showBackButton: true,
   editPost: {
-    enabled: false,
+    enabled: true,
     text: "Edit on GitHub",
     url: "https://github.com/garcia-danny/blog.dannygarcia.net/edit/main/",
   },
