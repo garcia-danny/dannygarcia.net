@@ -1,9 +1,10 @@
 import type { APIRoute } from "astro";
+import { SITE } from "@/config";
 
 export const GET: APIRoute = async () => {
-  const markdownContent = `# Peter Steinberger (@steipete)
+  const markdownContent = `# ${SITE.author}
 
-AI-powered tools from Swift roots to web frontiers. Every commit lands on GitHub for you to fork & remix.
+21-year-old Computer Science student, working in aerospace. I write about cybersecurity, technology, and what I'm learning along the way.
 
 ## Navigation
 
@@ -14,13 +15,13 @@ AI-powered tools from Swift roots to web frontiers. Every commit lands on GitHub
 
 ## Links
 
-- Twitter: [@steipete](https://twitter.com/steipete)
-- GitHub: [@steipete](https://github.com/steipete)
-- Email: steipete@gmail.com
+- GitHub: [@garcia-danny](https://github.com/garcia-danny)
+- LinkedIn: [garcia-danny](https://www.linkedin.com/in/garcia-danny/)
+- Email: inquiries@dannygarcia.net
 
 ---
 
-*This is the markdown-only version of steipete.me. Visit [steipete.me](https://steipete.me) for the full experience.*`;
+*This is the markdown-only version of dannygarcia.net. Visit [dannygarcia.net](${SITE.website}) for the full experience.*`;
 
   return new Response(markdownContent, {
     status: 200,

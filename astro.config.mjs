@@ -10,9 +10,12 @@ import { remarkLazyLoadImages } from "./src/utils/remarkLazyLoadImages.mjs";
 import { SITE } from "./src/config";
 import AstroPWA from "@vite-pwa/astro";
 
+const SITE_URL = "https://dannygarcia.net/";
+const CURRENT_YEAR = new Date().getFullYear();
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://dannygarcia.net/",
+  site: SITE_URL,
   trailingSlash: "never",
   markdown: {
     remarkPlugins: [
@@ -41,8 +44,8 @@ export default defineConfig({
         return true;
       },
       serialize: (item) => {
-        // Remove trailing slash from URL if present (except for root)
-        if (item.url.endsWith('/') && item.url !== 'https://dannygarcia.net/' + '/') {
+        // Remove trailing slash from URL if present (except for the homepage)
+        if (item.url.endsWith('/') && item.url !== SITE_URL) {
           item.url = item.url.slice(0, -1);
         }
         
@@ -53,7 +56,7 @@ export default defineConfig({
         item.priority = 0.5;
         
         // Homepage - highest priority, frequent updates
-        if (url === 'https://dannygarcia.net/' || url === 'https://dannygarcia.net/' + '/') {
+        if (url === SITE_URL) {
           item.priority = 1.0;
           item.changefreq = 'daily';
           item.lastmod = new Date().toISOString();
@@ -63,21 +66,21 @@ export default defineConfig({
           item.priority = 0.9;
           item.changefreq = 'weekly';
         }
-        // Recent blog posts (2024-2025)
-        else if (url.includes('/posts/2025') || url.includes('/posts/2024')) {
-          item.priority = 0.8;
-          item.changefreq = 'weekly';
-        }
-        // Somewhat recent posts (2020-2023)
-        else if (url.includes('/posts/2023') || url.includes('/posts/2022') || 
-                 url.includes('/posts/2021') || url.includes('/posts/2020')) {
-          item.priority = 0.6;
-          item.changefreq = 'monthly';
-        }
-        // Older posts (2010-2019)
-        else if (url.includes('/posts/201')) {
-          item.priority = 0.4;
-          item.changefreq = 'yearly';
+        // Blog posts, ranked by how recent their year folder is
+        // (this year and last year: 0.8, up to 5 years old: 0.6, older: 0.4)
+        else if (/\/posts\/\d{4}\//.test(url)) {
+          const postYear = Number(url.match(/\/posts\/(\d{4})\//)[1]);
+          const age = CURRENT_YEAR - postYear;
+          if (age <= 1) {
+            item.priority = 0.8;
+            item.changefreq = 'weekly';
+          } else if (age <= 5) {
+            item.priority = 0.6;
+            item.changefreq = 'monthly';
+          } else {
+            item.priority = 0.4;
+            item.changefreq = 'yearly';
+          }
         }
         // Tag pages - low priority
         else if (url.includes('/tags/')) {
@@ -99,11 +102,11 @@ export default defineConfig({
     react(),
     AstroPWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.ico", "peter-avatar.jpg"],
+      includeAssets: ["favicon.ico", "favicon.svg", "apple-touch-icon.png"],
       manifest: {
-        name: "Peter Steinberger",
-        short_name: "steipete",
-        description: "AI-powered tools from Swift roots to web frontiers. Everything I build is open source.",
+        name: SITE.title,
+        short_name: SITE.title,
+        description: SITE.desc,
         theme_color: "#006cac",
         background_color: "#fdfdfd",
         display: "standalone",
@@ -113,20 +116,20 @@ export default defineConfig({
         icons: [
           {
             src: "favicon.ico",
-            sizes: "48x48",
+            sizes: "16x16 32x32 48x48",
             type: "image/x-icon",
           },
           {
-            src: "peter-avatar.jpg",
+            src: "icon-192.png",
             sizes: "192x192",
-            type: "image/jpeg",
+            type: "image/png",
             purpose: "any",
           },
           {
-            src: "peter-avatar.jpg",
+            src: "icon-512.png",
             sizes: "512x512",
-            type: "image/jpeg",
-            purpose: "any maskable",
+            type: "image/png",
+            purpose: "any",
           },
         ],
       },

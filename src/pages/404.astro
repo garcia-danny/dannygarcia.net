@@ -9,7 +9,10 @@ import Layout from "@/layouts/Layout.astro";
 <Layout title={`404 Not Found | ${SITE.title}`} description="Page not found. The requested page doesn't exist on Danny Garcia's blog.">
   <Header />
 
-<script>document.addEventListener('DOMContentLoaded', function () { plausible('404'); });</script>
+<!-- Report broken links to Plausible (the script itself is loaded in Layout.astro) -->
+<script is:inline>
+  window.plausible?.("404", { props: { path: document.location.pathname } });
+</script>
 
 
 

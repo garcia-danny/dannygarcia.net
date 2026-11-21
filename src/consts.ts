@@ -46,7 +46,7 @@ export const SITE: Site = {
   editPost: {
     enabled: false,
     text: "Edit on GitHub",
-    url: "https://github.com/garcia-danny/dannygarcia.net/edit/main/",
+    url: "https://github.com/garcia-danny/blog.dannygarcia.net/edit/main/",
   },
   dynamicOgImage: true,
   lang: "en",
@@ -73,10 +73,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     href: "https://github.com/garcia-danny",
     label: "GitHub",
-  },
-  {
-    href: "https://twitter.com/steipete",
-    label: "Twitter",
   },
   {
     href: "/rss.xml",

@@ -21,7 +21,7 @@ const featuredPosts = posts2025AndLater.filter(({ data }) => data.featured);
 const recentPosts = posts2025AndLater.filter(({ data }) => !data.featured);
 ---
 
-<Layout description="Danny Garcia:  21-year-old Computer Science Student, working in Aerospace.">
+<Layout description="Danny Garcia: 21-year-old Computer Science student, working in aerospace.">
   <StructuredData type="WebSite" data={{}} />
   <StructuredData type="Person" data={{}} />
   <Header />
@@ -30,8 +30,10 @@ const recentPosts = posts2025AndLater.filter(({ data }) => !data.featured);
       <div class="flex flex-col sm:flex-row items-start gap-4">
         <a href="/about" class="block mx-auto sm:mx-0 group">
           <img 
-            src="pfp_linkedin.jpeg" 
-            alt="Danny Garcia" 
+            src="/pfp_linkedin.jpeg"
+            alt="Danny Garcia"
+            width="160"
+            height="160"
             class="w-40 h-40 rounded-full object-cover flex-shrink-0 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
           />
         </a>
@@ -56,7 +58,7 @@ const recentPosts = posts2025AndLater.filter(({ data }) => !data.featured);
             </a>
           </div>
           <p>
-            21-year-old Computer Science Student, working in areospace.
+            21-year-old Computer Science student, working in aerospace.
           </p>
           {
             // only display if at least one social link is enabled
@@ -119,10 +121,4 @@ const recentPosts = posts2025AndLater.filter(({ data }) => !data.featured);
       sessionStorage.setItem("backUrl", "/");
     }
   });
-</script>
-<!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-NLgQx3pt4dmu0EcwFO5XV.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
 </script>

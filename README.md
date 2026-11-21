@@ -4,7 +4,7 @@ This repository contains the source code for my personal website, built with [As
 
 ## About
 
-Hi, I’m Danny Garcia — a 20-year-old developer and cybersecurity enthusiast.  
+Hi, I’m Danny Garcia — a 21-year-old Computer Science student and cybersecurity enthusiast.  
 This website is my personal website where I share blogs, projects, or other stuff I'm working on!
 
 ## Project Structure
@@ -25,8 +25,8 @@ This website is my personal website where I share blogs, projects, or other stuf
 │   └── utils/           # Utility functions
 ├── astro.config.mjs     # Astro configuration
 ├── vercel.json          # Vercel deployment and CSP configuration
+├── docs/                # Notes on writing posts (e.g. YouTube embeds)
 ├── package.json         # Project dependencies and scripts
-├── tailwind.config.mjs  # Tailwind CSS configuration
 └── LICENSE              # Dual license (CC BY 4.0 + MIT)
 ```
 
@@ -38,6 +38,7 @@ This website is my personal website where I share blogs, projects, or other stuf
 | `npm run dev`     | Start local dev server at `localhost:4321` |
 | `npm run build`   | Build the production site to `./dist/`     |
 | `npm run preview` | Preview the production build locally       |
+| `npm run check`   | Lint and format-check `src/` with Biome    |
 
 ## License
 
@@ -50,4 +51,4 @@ See the [LICENSE](LICENSE) file for full details.
 
 ## Special Thanks
 
-Special thanks to [Peter Steinberger](https://github.com/steiburg) for open-sourcing his website and providing inspiration for this project.
+Special thanks to [Peter Steinberger](https://github.com/steipete) for open-sourcing his website and providing inspiration for this project.

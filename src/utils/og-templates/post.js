@@ -7,10 +7,10 @@ import loadGoogleFonts from "../loadGoogleFont";
  *
  * This template generates social media preview cards for blog posts.
  *
- * CUSTOMIZATION: We override the default behavior to show "steipete.me"
- * on the right side instead of the author name (Peter Steinberger).
+ * CUSTOMIZATION: We override the default behavior to show "dannygarcia.net"
+ * on the right side instead of the author name.
  * This avoids redundancy since the author name already appears on the left
- * with "by Peter Steinberger".
+ * with "by Danny Garcia".
  */
 
 // const markup = html`<div
