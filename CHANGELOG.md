@@ -4,7 +4,38 @@ All notable website architecture changes to this project will be documented in t
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased]
+## [2026-11-21]
+
+### Fixed
+- Markdown home page (`/index.md`) showed the original site owner's bio and contact details; it now shows Danny's
+- Installable-app manifest, page metadata and structured data still used the original owner's name, Twitter handle and (deleted) avatar
+- Two routes generated the same blog post URLs (`posts/[...slug].astro` and `posts/[...slug]/index.astro`); removed the unused one and its layouts
+- Broken favicon: `favicon.ico` was an SVG file served as an icon; added a real `.ico`, an SVG favicon and app icons
+- Missing site-wide social preview image (`/og.png` returned 404)
+- Plausible analytics only loaded on the home page, and the 404 page threw an error calling it; it now loads once for every page
+- Every page except posts emitted a "BlogPosting" structured-data block with an invalid date; removed it
+- `<html class="false">` on pages without smooth scrolling
+- Footer and "Edit on GitHub" links pointed to a repository that doesn't exist
+- Tag links ended in a slash and were redirected on every click
+- Sitemap priorities only recognised posts from 2010–2025
+- Typos and a broken link in the home page and both blog posts
+
+### Changed
+- Resized the home and about photos (1.9 MB → 140 KB) without changing their filenames
+- Replaced the deprecated `ViewTransitions` component with `ClientRouter`
+- Stopped loading Twitter's `widgets.js` on every page (no post uses it; `TwitterEmbed` doesn't need it)
+- Removed the original owner's domains from `vercel.json` redirects and Content-Security-Policy
+- Updated README, LICENSE (kept the original MIT notice, added Danny's), CLAUDE.MD and package name
+
+### Removed
+- Unused legacy files from the original site: `BlogPostLayout`, `BlogPost`, `BaseLayout`, `BaseHead`, `Sidebar`, `FormattedDate`, `criticalCSS`, `/page/[page]` and `/posts/[page]` routes, `public/site.webmanifest`, `public/game-audio.mp3`, and template screenshots in `src/assets/images/`
+- `package.json` scripts that pointed to a `scripts/` folder that doesn't exist
+
+## Upstream history
+
+The entries below describe changes made to the original site this project was forked from (steipete.me, by Peter Steinberger), before it became dannygarcia.net. They are kept for reference.
+
+### [Unreleased]
 
 ### Added
 - steipete.md domain support for markdown-only viewing (#130, #139)
@@ -23,7 +54,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Targeted only elements that actually change during theme switching
   - Added hardware acceleration for iOS Safari using transform3d
 
-## [2025-01-06]
+### [2025-01-06]
 
 ### Change
 
@@ -36,7 +67,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Improved
 - Code block contrast in light mode for better readability (#117)
 
-## [2025-01-05]
+### [2025-01-05]
 
 ### Fixed
 - Sitemap trailing slash mismatch issue (#113)
@@ -63,7 +94,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - TypeScript errors in readingTime utility and astro.config (#100)
 - Share links sizing and spacing on mobile devices (#99)
 
-## [2025-01-04]
+### [2025-01-04]
 
 ### Technical Infrastructure
 - Migrated from steipete.com to steipete.me

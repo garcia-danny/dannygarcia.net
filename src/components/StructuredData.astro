@@ -1,4 +1,6 @@
 ---
+import { SITE } from "@/config";
+
 export interface Props {
   type: "BlogPosting" | "Person" | "WebSite";
   data: any;
@@ -26,14 +28,14 @@ if (type === "BlogPosting") {
       name: "Danny Garcia",
       logo: {
         "@type": "ImageObject",
-        url: "https://dannygarcia.net/peter-avatar.jpg",
+        url: "https://dannygarcia.net/icon-512.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": data.url,
     },
-    image: data.ogImage || "https://dannygarcia.net/peter-avatar.jpg",
+    image: data.ogImage || "https://dannygarcia.net/pfp_linkedin.jpeg",
     articleSection: data.tags?.[0] || "Technology",
     keywords: data.tags?.join(", ") || "",
     wordCount: data.wordCount,
@@ -45,14 +47,13 @@ if (type === "BlogPosting") {
     "@type": "Person",
     name: "Danny Garcia",
     url: "https://dannygarcia.net",
-    image: "https://steipete.me/peter-avatar.jpg",
+    image: "https://dannygarcia.net/pfp_linkedin.jpeg",
     sameAs: [
       "https://github.com/garcia-danny",
       "https://instagram.com/dannygvrcia"
     ],
     jobTitle: "College Student",
-    description:
-      "20-year-old developer & student.",
+    description: SITE.desc,
   };
 } else if (type === "WebSite") {
   structuredData = {
@@ -60,8 +61,7 @@ if (type === "BlogPosting") {
     "@type": "WebSite",
     name: "Danny Garcia",
     url: "https://dannygarcia.net",
-    description:
-      "20-year-old developer & student.",
+    description: SITE.desc,
     author: {
       "@type": "Person",
       name: "Danny Garcia",

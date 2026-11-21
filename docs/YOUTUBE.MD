@@ -34,14 +34,16 @@ Using a youtu.be short URL:
 
 ## How It Works
 
-The site uses the `MDXTwitterTransform.astro` component to scan for these patterns in blog post content and replace them with proper YouTube embeds. The component detects special tags using regex and inserts responsive iframes.
+The post layout (`src/layouts/PostDetails.astro`) scans blog post content for these patterns and replaces them with responsive YouTube iframes.
 
 ## Twitter Embeds for Comparison
 
-Twitter embeds work in a similar way:
+The `{% twitter %}` shortcode is **not** processed by the current post layout. To embed a post from X/Twitter, write the post as `.mdx` and use the `TwitterEmbed` component:
 
-```
-{% twitter https://twitter.com/steipete/status/1134003594804547584 %}
+```mdx
+import TwitterEmbed from "@/components/TwitterEmbed.astro";
+
+<TwitterEmbed url="https://x.com/<user>/status/<id>" />
 ```
 
 ## Best Practices

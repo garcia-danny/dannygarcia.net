@@ -19,7 +19,7 @@ And it got me thinking, how can we protect ourselves in today's digital world?
 
 Yubico is a cybersecurity company that invented the YubiKey, **a hardware-based authentication key, to prevent phishing attacks and account takeovers**.
 
-When a website offers 2FA, it usually sends you a one-time password in email, or text message. a Yubikey is a physical 2FA, you plug it into your device and unlock your 2FA. Pretty much a physical key in a digital world. 
+When a website offers 2FA, it usually sends you a one-time password by email or text message. A YubiKey is a physical 2FA, you plug it into your device and unlock your 2FA. Pretty much a physical key in a digital world. 
 
 ## Yubico’s 2025 Survey 
 
@@ -33,26 +33,26 @@ The survey revealed the following:
 
 Phishing attempts and other cyber threats are becoming harder and harder to spot each day, **especially given how advanced AI has become over the years**. Based on the survey, around *40% of employees have never received any form of cybersecurity training*. Many believe that a simple username and password is the safest authentication method—but they couldn’t be more wrong.
 
-Based on the survey, finding show that employees underestimate the risks to protect their login information, and overestimate the systems meant to protect them. 
+Based on the survey, the findings show that employees underestimate the risks to protect their login information, and overestimate the systems meant to protect them. 
 
 Cybercrime has grown exponentially with the usage of artificial intelligence (AI), and even raises the chances of an unskilled hacker to steal account information. Although given the downside of AI, it does also have its upsides in productivity, and growth. 
 
-**So, how can we protect ourselves against ai-driven attacks, or even cybercrime in general?**
+**So, how can we protect ourselves against AI-driven attacks, or even cybercrime in general?**
 
 ### Use phishing-resistant authentication
 Artificial Intelligence makes phishing so much more convincing, and passwords can only do so much. 
-- Use Hardware keys (Yubikeys!) 
+- Use hardware keys (YubiKeys!) 
 - Avoid SMS-based MFA (it’s vulnerable to SIM-swapping and interception)
 - Prefer app-based MFA or passkeys tied to your device
 
 ### Assume everything can be faked
 AI can convincingly mimic emails, voices, faces, and even your own writing style! 
 - Verify urgent requests through a second channel (call, in-person, known contact) 
-- Be skeptical of messages that create pressure or urgent
+- Be skeptical of messages that create pressure or urgency
 - Don’t trust emails or messages just because they “sound right”
 
 ### Reduce your digital footprint
-AI thrives on public available data, so lock down your information! 
+AI thrives on publicly available data, so lock down your information! 
 - Remove your data from data broker sites (DeleteMe, Incogni, etc)
 - Lock down social media privacy settings
 - Avoid oversharing job details, schedules, or personal habits
@@ -62,17 +62,17 @@ The less public data there is to know about you, the less of a chance somebody c
 And my personal favorite, **USE A PASSWORD MANAGER!!**
 
 - Generate and store unique passwords for every site, making it harder for AI or people to guess your password. 
-- Or do yourself a favor and move away from password to passkeys, where supported. 
+- Or do yourself a favor and move away from passwords to passkeys, where supported. 
 - Watch for breach alerts from your manager or you can also check [HaveIBeenPwned.com](https://haveibeenpwned.com) and look for yourself! 
 
-Reused passwords are still one of the biggest risks in today’s digital world. If an AI can guess your writing style, and use public available data, imagine how easy it is to get your password.
+Reused passwords are still one of the biggest risks in today’s digital world. If an AI can guess your writing style, and use publicly available data, imagine how easy it is to get your password.
 
 ## Final Words
 The fact that I was prompted to think about the importance of cyber-security made me appreciate the value of holding more discussions on the subject, particularly since technology keeps developing.
 
 One of the most essential things which I got from the webinar was the realization that cyber-security is not only related to the level of development of technologies but to our awareness of the threats as well.
 
-Even if you are not a specialist working in the field of cyber-security, **you can make some efforts to ensure that your information will be safe when you use internet**.
+Even if you are not a specialist working in the field of cyber-security, **you can make some efforts to ensure that your information will be safe when you use the internet**.
 
 Thank you to Yubico for organizing the webinar. You can find the survey below.
 
